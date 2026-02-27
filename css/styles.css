@@ -1,0 +1,102 @@
+:root {
+  /* COLORS */
+  --blue-900: #0b0d17;
+  --blue-300: #d0d6f9;
+  --white: #ffffff;
+
+  /* FONTS */
+  --font-serif: "Bellefair", serif;
+  --font-condensed: "Barlow Condensed", sans-serif;
+  --font-body: "Barlow", sans-serif;
+
+  /* SPACING */
+  --space-1600: 128px;
+  --space-1200: 96px;
+  --space-1000: 80px;
+  --space-800: 64px;
+  --space-600: 48px;
+  --space-500: 40px;
+  --space-400: 32px;
+  --space-300: 24px;
+  --space-200: 16px;
+  --space-150: 12px;
+  --space-100: 8px;
+  --space-50: 4px;
+  --space-25: 2px;
+}
+
+body {
+  background-color: var(--blue-900);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: url("../assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ─── Typography ──────────────────────────────────────────────── */
+
+.tp-1 {
+  font-family: var(--font-serif);
+  font-size: 9rem; /* 140px */
+}
+
+.tp-2 {
+  font-family: var(--font-serif);
+  font-size: 6.25rem; /* 100px */
+}
+
+.tp-3 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem; /* 56px */
+}
+
+.tp-4 {
+  font-family: var(--font-serif);
+  font-size: 2rem; /* 32px */
+}
+
+.tp-5 {
+  font-family: var(--font-condensed);
+  font-size: 1.75rem; /* 28px */
+  letter-spacing: 4px;
+}
+
+.tp-6 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem; /* 28px */
+}
+
+.tp-7 {
+  font-family: var(--font-condensed);
+  font-size: 0.875rem; /* 14px */
+  letter-spacing: 2px;
+}
+
+.tp-8 {
+  font-family: var(--font-condensed);
+  font-size: 1rem; /* 16px */
+  letter-spacing: 2px;
+}
+
+.tp-9 {
+  font-family: var(--font-body);
+  font-size: 1.125rem; /* 18px */
+}
+
+/* ─── Breakpoints ────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  body {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+  }
+}
