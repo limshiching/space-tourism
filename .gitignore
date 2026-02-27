@@ -1,0 +1,22 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Node (in case you add it later)
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+
+# Environment files (future-proofing)
+.env
+.env.local
+
+# Figma or random exports
+*.fig
