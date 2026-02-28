@@ -1,3 +1,5 @@
+/* ─── Design tokens ─────────────────────────────────────────── */
+
 :root {
   /* COLORS */
   --blue-900: #0b0d17;
@@ -23,6 +25,20 @@
   --space-100: 8px;
   --space-50: 4px;
   --space-25: 2px;
+
+  /* ── Component tokens (desktop default) ── */
+  --bg-image: url("../assets/home/background-home-desktop.jpg");
+
+  --header-pad-top: var(--space-400);
+  --header-inner-pad-left: var(--space-400);
+
+  --nav-gap: var(--space-600);
+  --nav-pad-y: var(--space-500);
+  --nav-pad-right: var(--space-800);
+  --nav-pad-left: var(--space-1600);
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-blur: 32px;
 }
 
 /* ─── Base ─────────────────────────────────────────────────── */
@@ -36,17 +52,30 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
 
-  background-image: url("../assets/home/background-home-desktop.jpg");
+  background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Mobile nav hidden by default (desktop/tablet) */
+/* Default hidden (desktop/tablet) */
 .nav-toggle,
 .nav-overlay,
 .mobile-nav {
   display: none;
+}
+
+/* ─── Base Reset ───────────────────────── */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+  margin: 0;
 }
 
 /* ─── Accessibility ─────────────────────────────────────────── */
@@ -68,6 +97,7 @@ body {
 .tp-1 {
   font-family: var(--font-serif);
   font-size: 9rem; /* 140px */
+  line-height: 1.79;
 }
 
 .tp-2 {
@@ -89,6 +119,7 @@ body {
   font-family: var(--font-condensed);
   font-size: 1.75rem; /* 28px */
   letter-spacing: 4px;
+  line-height: 0.3;
 }
 
 .tp-6 {
@@ -116,7 +147,7 @@ body {
 /* ─── Header ───────────────────────────────────────────────── */
 
 .site-header {
-  padding-top: var(--space-400);
+  padding-top: var(--header-pad-top);
 }
 
 .header-inner {
@@ -124,7 +155,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: var(--space-400);
+  padding-left: var(--header-inner-pad-left);
 }
 
 /* Divider */
@@ -145,13 +176,14 @@ body {
   margin-left: 0;
   display: flex;
   flex: 0 0 auto;
-  gap: var(--space-600);
+  gap: var(--nav-gap);
 
-  padding: var(--space-500) var(--space-800) var(--space-500) var(--space-1600);
+  padding: var(--nav-pad-y) var(--nav-pad-right) var(--nav-pad-y)
+    var(--nav-pad-left);
 
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(32px) saturate(140%);
-  -webkit-backdrop-filter: blur(32px) saturate(140%);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
 }
 
 .main-nav a {
@@ -187,34 +219,93 @@ body {
   background: var(--white);
 }
 
+/* ─── Main Content ───────────────────────────────────────────────── */
+
+.site-main {
+  min-height: calc(100vh - 136px);
+  display: flex;
+}
+
+.home-hero {
+  width: min(1110px, 100%);
+  margin-inline: auto;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  padding-inline: var(--space-1600);
+  padding-bottom: var(--space-1200);
+}
+
+.home-content {
+  max-width: 540px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.home-content .tp-5,
+.home-content .tp-9 {
+  color: var(--blue-300);
+}
+
+.explore-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.explore-btn {
+  position: relative;
+  width: 272px;
+  height: 272px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--blue-900);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.explore-btn span {
+  font-weight: 400;
+}
+
+canvas {
+  position: absolute;
+  inset: -52px;
+  width: calc(100% + 104px);
+  height: calc(100% + 104px);
+  pointer-events: none;
+  border-radius: 50%;
+  overflow: visible;
+}
+
 /* ─── Breakpoints ────────────────────────────────────────────── */
 
 @media (max-width: 1024px) {
-  body {
-    background-image: url("../assets/home/background-home-tablet.jpg");
+  :root {
+    --bg-image: url("../assets/home/background-home-tablet.jpg");
+
+    --nav-pad-left: var(--space-1000);
+    --nav-pad-right: var(--space-500);
   }
 
   .header-inner::after {
     display: none;
   }
-
-  .main-nav {
-    padding-left: var(--space-1000);
-    padding-right: var(--space-500);
-  }
 }
 
 @media (max-width: 600px) {
-  body {
-    background-image: url("../assets/home/background-home-mobile.jpg");
+  :root {
+    --bg-image: url("../assets/home/background-home-mobile.jpg");
+    --header-pad-top: var(--space-300);
   }
 
   .main-nav {
     display: none;
-  }
-
-  .site-header {
-    padding-top: var(--space-300);
   }
 
   .header-inner {
@@ -257,7 +348,6 @@ body {
     inset: 0;
     z-index: 50;
     display: block;
-
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(2px);
   }

@@ -18,9 +18,8 @@
 
     <title>Frontend Mentor | Space tourism website</title>
   </head>
-  <script src="./js/main.js"></script>
   <body>
-    <!-- Header -->
+    <!-- ─── Header ───────────────────────────────────────── -->
     <header class="site-header">
       <div class="header-inner">
         <!-- Logo -->
@@ -73,9 +72,32 @@
       </div>
     </header>
 
-    <!-- So, you want to travel to Space Let’s face it; if you want to go to space,
-    you might as well genuinely go to outer space and not hover kind of on the
-    edge of it. Well sit back, and relax because we’ll give you a truly out of
-    this world experience! Explore -->
+    <!-- ─── Main Content ─────────────────────────────────── -->
+
+    <main class="site-main">
+      <section class="home-hero">
+        <!-- Left text column -->
+        <div class="home-content">
+          <p class="tp-5">SO, YOU WANT TO TRAVEL TO</p>
+
+          <h1 class="tp-1">SPACE</h1>
+
+          <p class="tp-9">
+            Let&#39;s face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we&#39;ll give you a truly out of
+            this world experience!
+          </p>
+        </div>
+
+        <!-- Right CTA -->
+        <a href="destination.html" class="explore-btn">
+          <span class="tp-4">EXPLORE</span>
+          <!-- Orbit effect -->
+          <canvas id="c" class="orbit-canvas" width="378" height="378"></canvas>
+        </a>
+      </section>
+    </main>
+    <script src="./js/main.js"></script>
   </body>
 </html>
