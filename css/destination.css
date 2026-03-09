@@ -1,0 +1,189 @@
+/* ───────── Page Background Override ───────── */
+
+.destination-page {
+  --bg-image: url("../assets/destination/background-destination-desktop.jpg");
+}
+
+.destination-page .site-main {
+  display: flex;
+  align-items: center;
+}
+
+/* ───────── Section Layout ───────── */
+
+.destination {
+  width: min(1110px, 100%);
+  margin-inline: auto;
+  padding: var(--space-600) var(--space-1600);
+
+  display: grid;
+  grid-template-areas:
+    "title title"
+    "image content";
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-600) var(--space-1000);
+  align-items: center;
+}
+
+/* ───────── Title ───────── */
+
+.destination-title {
+  grid-area: title;
+  letter-spacing: 4px;
+}
+
+.destination-title span {
+  opacity: 0.25;
+  font-weight: 600;
+  margin-right: var(--space-200);
+}
+
+/* ───────── Grid (image + content) ───────── */
+
+.destination-grid {
+  display: contents;
+}
+
+/* Left Image */
+
+.destination-image {
+  grid-area: image;
+  padding: var(--space-1000) var(--space-500);
+}
+
+.destination-image img {
+  width: 100%;
+}
+
+/* Right Content */
+
+.destination-content {
+  grid-area: content;
+  max-width: 445px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+  padding: var(--space-1000) var(--space-500);
+}
+
+/* ───────── Tabs ───────── */
+
+.destination-tabs {
+  display: flex;
+  gap: var(--space-500);
+}
+
+.destination-tabs button {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding-bottom: var(--space-100);
+  border-bottom: 2px solid transparent;
+  letter-spacing: 2px;
+}
+
+.destination-tabs button:hover {
+  border-bottom: 2px solid var(--blue-300);
+}
+
+.destination-tabs .is-active {
+  border-bottom: 2px solid var(--white);
+}
+
+/* ───────── Planet Info ───────── */
+
+#planet-name {
+  text-transform: uppercase;
+}
+
+#planet-description {
+  color: var(--blue-300);
+  line-height: 1.7;
+}
+
+/* ───────── Meta Section ───────── */
+
+.destination-meta {
+  width: 100%;
+  display: flex;
+  gap: var(--space-800);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: var(--space-500);
+}
+
+.destination-meta .tp-7 {
+  color: var(--blue-300);
+  margin-bottom: var(--space-150);
+}
+
+/* ───────── Tablet ───────── */
+
+@media (max-width: 1024px) {
+  .destination-page {
+    --bg-image: url("../assets/destination/background-destination-tablet.jpg");
+  }
+
+  .destination {
+    grid-template-areas:
+      "title title"
+      "image image"
+      "content content";
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: var(--space-600) var(--space-500);
+  }
+
+  .destination-image {
+    padding: var(--space-400);
+  }
+
+  .destination-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+  }
+
+  .destination-content {
+    max-width: 573px;
+    padding: 0;
+    align-items: center;
+  }
+
+  .destination-tabs {
+    justify-content: center;
+  }
+
+  .destination-meta {
+    justify-content: center;
+  }
+}
+
+/* ───────── Mobile ───────── */
+
+@media (max-width: 600px) {
+  .destination-page {
+    --bg-image: url("../assets/destination/background-destination-mobile.jpg");
+  }
+
+  .destination {
+    padding: var(--space-300);
+    gap: var(--space-300) 0;
+  }
+
+  .destination-image img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .destination-tabs {
+    gap: var(--space-300);
+  }
+
+  .destination-meta {
+    flex-direction: column;
+    gap: var(--space-400);
+    align-items: center;
+  }
+}

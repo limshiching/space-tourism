@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/destination.css" />
+
+    <title>Frontend Mentor | Destination</title>
+  </head>
+
+  <body class="destination-page">
+    <!-- ─── Header (copied from index) ───────────────────────── -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="./assets/shared/logo.svg" alt="Space Tourism" />
+        </a>
+
+        <button
+          class="nav-toggle"
+          aria-controls="mobile-nav"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open navigation</span>
+          <img
+            src="./assets/shared/icon-hamburger.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+
+        <div class="nav-overlay" hidden></div>
+
+        <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile" hidden>
+          <button class="nav-close">
+            <span class="sr-only">Close navigation</span>
+            <img
+              src="./assets/shared/icon-close.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+
+          <a class="tp-8" href="index.html"><span>00</span> Home</a>
+          <a class="tp-8 is-active" href="destination.html"
+            ><span>01</span> Destination</a
+          >
+          <a class="tp-8" href="crew.html"><span>02</span> Crew</a>
+          <a class="tp-8" href="technology.html"><span>03</span> Technology</a>
+        </nav>
+
+        <nav class="main-nav">
+          <a href="index.html" class="tp-8"><span>00</span>Home</a>
+          <a href="destination.html" class="tp-8 is-active"
+            ><span>01</span> Destination</a
+          >
+          <a href="crew.html" class="tp-8"><span>02</span> Crew</a>
+          <a href="technology.html" class="tp-8"><span>03</span> Technology</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ─── Main Content ─────────────────────────────────── -->
+    <main class="site-main">
+      <section class="destination">
+        <h5 class="tp-5 destination-title">
+          <span>01</span> PICK YOUR DESTINATION
+        </h5>
+        <div class="destination-grid">
+          <!-- Left: Image -->
+          <div class="destination-image">
+            <img
+              id="planet-img"
+              src="./assets/destination/image-moon.png"
+              alt="Moon"
+            />
+          </div>
+
+          <!-- Right: Content -->
+          <div class="destination-content">
+            <!-- Tabs -->
+            <div class="destination-tabs">
+              <button data-destination="moon" class="tp-8 is-active">
+                MOON
+              </button>
+              <button data-destination="mars" class="tp-8">MARS</button>
+              <button data-destination="europa" class="tp-8">EUROPA</button>
+              <button data-destination="titan" class="tp-8">TITAN</button>
+            </div>
+
+            <!-- Planet Info -->
+            <h2 id="planet-name" class="tp-2">MOON</h2>
+
+            <p id="planet-description" class="tp-9">
+              See our planet as you’ve never seen it before. A perfect relaxing
+              trip away.
+            </p>
+
+            <div class="destination-meta">
+              <div>
+                <p class="tp-7">AVG. DISTANCE</p>
+                <p id="planet-distance" class="tp-6">384,400 KM</p>
+              </div>
+
+              <div>
+                <p class="tp-7">EST. TRAVEL TIME</p>
+                <p id="planet-travel" class="tp-6">3 DAYS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/destination.js"></script>
+  </body>
+</html>
